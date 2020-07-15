@@ -235,7 +235,7 @@
                 },
                 {
                     "final": true,
-                    "query": "MATCH p=shortestPath((g:Group {name:$result})-[*1..]->(n {highvalue:true})) AND g<>n return p",
+                    "query": "MATCH p=shortestPath((g:Group {name:$result})-[*1..]->(n {highvalue:true})) WHERE g<>n return p",
                     "allowCollapse": true
                 }
             ]
@@ -280,7 +280,7 @@
                 },
                 {
                     "final": true,
-                    "query": "MATCH p=(m:Group)-[r:Owns|:WriteDacl|:GenericAll|:WriteOwner|:ExecuteDCOM|:GenericWrite|:AllowedToDelegate|:ForceChangePassword]->(n:Computer) WHERE m.objectid ENDS WITH '-513' RETURN p",
+                    "query": "MATCH p=(m:Group)-[:Owns|WriteDacl|GenericAll|WriteOwner|ExecuteDCOM|GenericWrite|AllowedToDelegate|ForceChangePassword]->(n:Computer) WHERE m.objectid ENDS WITH '-513' RETURN p",
                     "allowCollapse": true
                 }
             ]
