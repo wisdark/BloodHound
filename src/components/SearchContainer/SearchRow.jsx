@@ -2,12 +2,8 @@ import React from 'react';
 import { Highlighter } from 'react-bootstrap-typeahead';
 import styles from './SearchRow.module.css';
 import clsx from 'clsx';
-import { buildAzureApplicationAdmins } from '../../js/newingestion';
-import { useContext } from 'react';
-import { AppContext } from '../../AppContext';
 
 const SearchRow = ({ item, search }) => {
-    const context = useContext(AppContext);
     let searched;
     if (search.includes(':')) {
         searched = search.split(':')[1];
@@ -65,6 +61,10 @@ const SearchRow = ({ item, search }) => {
             break;
         case 'AZServicePrincipal':
             icon.className = 'fa fa-robot';
+            break;
+        default:
+            icon.className = 'fa fa-question';
+            type = 'Unknown';
             break;
     }
 
