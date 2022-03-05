@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
+import React, {useEffect, useState} from 'react';
 import BaseModal from './BaseModal';
 import GenericAll from './HelpTexts/GenericAll/GenericAll';
-import { Button, Modal } from 'react-bootstrap';
-import { encode } from 'he';
+import {Button, Modal} from 'react-bootstrap';
+import {encode} from 'he';
 import MemberOf from './HelpTexts/MemberOf/MemberOf';
 import AllExtendedRights from './HelpTexts/AllExtendedRights/AllExtendedRights';
 import AdminTo from './HelpTexts/AdminTo/AdminTo';
@@ -45,6 +44,9 @@ import AZCloudAppAdmin from './HelpTexts/AZCloudAppAdmin/AZCloudAppAdmin';
 import AZRunsAs from './HelpTexts/AZRunsAs/AZRunsAs';
 import AZVMContributor from './HelpTexts/AZVMContributor/AZVMContributor';
 import Default from './HelpTexts/Default/Default';
+import WriteSPN from "./HelpTexts/WriteSPN/WriteSPN";
+import AddSelf from "./HelpTexts/AddSelf/AddSelf";
+import AddKeyCredentialLink from "./HelpTexts/AddKeyCredentialLink/AddKeyCredentialLink";
 
 const HelpModal = () => {
     const [sourceName, setSourceName] = useState('');
@@ -120,6 +122,9 @@ const HelpModal = () => {
         AZCloudAppAdmin: AZCloudAppAdmin,
         AZRunsAs: AZRunsAs,
         AZVMContributor: AZVMContributor,
+        WriteSPN: WriteSPN,
+        AddSelf: AddSelf,
+        AddKeyCredentialLink: AddKeyCredentialLink
     };
 
     const Component = edge in components ? components[edge] : Default;
